@@ -1,0 +1,8 @@
+### display all products
+get http://localhost:3000/products
+
+### display particular product
+get http://localhost:3000/product/2
+
+### create a new product
+

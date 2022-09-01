@@ -2,29 +2,26 @@
 get http://localhost:3000/products
 
 ### display particular product
-get http://localhost:3000/product/5
+get http://localhost:3000/product/3
 
 ### create a new product
 POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
-"name": "Test-Name",
-  "price": 5,
-  "image_url": "test-url",
-  "description": "test-description"
+"name": "Yeezy",
+  "price": 200,
+  "image_url": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fwp-content%2Fblogs.dir%2F6%2Ffiles%2F2022%2F03%2Fadidas-yeezy-boost-350-v2-oreo-sneakers-re-release-launch-price-date-0.jpg?w=960&cbr=1&q=90&fit=max",
+  "description": "A great shoe for hype-beasts"
 }
 
 ### create an update
-PATCH http://localhost:3000/products/5.json
+PATCH http://localhost:3000/products/3.json
 Content-Type: application/json
 
 {
-  "name": "update-Name",
-  "price": 10,
-  "image_url": "update-url",
-  "description": "update-description"
+  "name": "UGGs",
 }
 
 ### product delete action
-DELETE http://localhost:3000/products/6.json
+DELETE http://localhost:3000/products/4.json

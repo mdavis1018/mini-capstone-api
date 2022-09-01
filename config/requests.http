@@ -2,7 +2,29 @@
 get http://localhost:3000/products
 
 ### display particular product
-get http://localhost:3000/product/2
+get http://localhost:3000/product/5
 
 ### create a new product
+POST http://localhost:3000/products.json
+Content-Type: application/json
 
+{
+"name": "Test-Name",
+  "price": 5,
+  "image_url": "test-url",
+  "description": "test-description"
+}
+
+### create an update
+PATCH http://localhost:3000/products/5.json
+Content-Type: application/json
+
+{
+  "name": "update-Name",
+  "price": 10,
+  "image_url": "update-url",
+  "description": "update-description"
+}
+
+### product delete action
+DELETE http://localhost:3000/products/6.json

@@ -1,16 +1,16 @@
 ### display all products
-get http://localhost:3000/products
+get http://localhost:3000/products.json
 
 ### display particular product
-get http://localhost:3000/product/3
+get http://localhost:3000/products/2.json
 
 ### create a new product
 POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
-"name": "Yeezy",
-  "price": 200,
+"name": "test-2",
+  "price": 10,
   "image_url": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fwp-content%2Fblogs.dir%2F6%2Ffiles%2F2022%2F03%2Fadidas-yeezy-boost-350-v2-oreo-sneakers-re-release-launch-price-date-0.jpg?w=960&cbr=1&q=90&fit=max",
   "description": "A great shoe for hype-beasts"
 }
@@ -21,6 +21,7 @@ Content-Type: application/json
 
 {
   "name": "UGGs",
+  "price": 200
 }
 
 ### product delete action

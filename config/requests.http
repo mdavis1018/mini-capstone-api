@@ -1,5 +1,10 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4NjExLCJleHAiOjE2NjMyMDY2Njh9.cRVM8qDaL7bePXC1UuAxlP6zmpQvSWTXVvrsphK9kWI
+
 ### display all products
 get http://localhost:3000/products.json
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
 
 ### display particular product
 get http://localhost:3000/products/2.json
@@ -7,12 +12,13 @@ get http://localhost:3000/products/2.json
 ### create a new product
 POST http://localhost:3000/products.json
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
 {
-"name": "test-2",
-  "price": 10,
-  "image_url": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fwp-content%2Fblogs.dir%2F6%2Ffiles%2F2022%2F03%2Fadidas-yeezy-boost-350-v2-oreo-sneakers-re-release-launch-price-date-0.jpg?w=960&cbr=1&q=90&fit=max",
-  "description": "A great shoe for hype-beasts"
+"name": "test-5",
+  "price": 20,
+  "description": "a test for my creation",
+  "supplier_id": 1
 }
 
 ### create an update
@@ -26,3 +32,82 @@ Content-Type: application/json
 
 ### product delete action
 DELETE http://localhost:3000/products/4.json
+
+### display all suppliers
+get http://localhost:3000/supplier.json
+
+### display particular supplier
+get http://localhost:3000/supplier/3.json
+
+### create a new supplier
+POST http://localhost:3000/supplier.json
+Content-Type: application/json
+
+{
+
+}
+
+### create a new user
+POST http://localhost:3000/users.json
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "name": "Marcus1",
+  "email": "test-3@email.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+### Sessions create (login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "test@email.com",
+  "password": "password"
+}
+### Login with JWT
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "name": "",
+}
+
+### create a new order
+POST http://localhost:3000/orders.json
+Authorization: Bearer {{jwt}}
+
+
+### orders index
+
+GET  http://localhost:3000/orders.json
+Authorization: Bearer {{jwt}}
+
+### Orders show 
+GET  http://localhost:3000/orders/1.json
+Authorization: Bearer {{jwt}}
+
+
+### Carted Product create
+POST http://localhost:3000/cartedproducts.json
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "user_id": 8612,
+      "product_id": 3,
+      "quantity": 5,
+      "status": "carted",
+      "order_id": 5
+}
+
+### Carted Product index
+GET http://localhost:3000/cartedproducts.json
+Authorization: Bearer {{jwt}}
+
+### CartedProduct Destroy Action
+ DELETE http://localhost:3000/carted_products/:id.json
+ Authorization: Bearer {{jwt}}
